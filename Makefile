@@ -8,8 +8,11 @@ _data_cache/conso-elec-gaz-annuelle-par-secteur-dactivite-agregee-commune.csv:
 _data_cache/igt_ademe_2016.csv:
 	wget --output-document=$@ "https://data.ademe.fr/data-fair/api/v1/datasets/igt-pouvoir-de-rechauffement-global/full"
 
+_data_cache/communes-nouvelle-aquitaine.geojson:
+	wget --output-document=$@ "https://france-geojson.gregoiredavid.fr/repo/regions/nouvelle-aquitaine/communes-nouvelle-aquitaine.geojson"
+
 .phony:populate_data_cache
-populate_data_cache: _data_cache/igt_2016_global.csv _data_cache/conso-elec-gaz-annuelle-par-secteur-dactivite-agregee-commune.csv _data_cache/igt_ademe_2016.csv
+populate_data_cache: _data_cache/igt_2016_global.csv _data_cache/conso-elec-gaz-annuelle-par-secteur-dactivite-agregee-commune.csv _data_cache/igt_ademe_2016.csv _data_cache/communes-nouvelle-aquitaine.geojson
 
 
 .phony: start_jupyter_server
