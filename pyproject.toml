@@ -59,6 +59,7 @@ dependencies = [
     "PyYAML<7.0,>=6.0",
     "xlrd<3.0.0,>=2.0.1",
     "cartiflette @ git+https://github.com/InseeFrLab/cartiflette.git",
+    "mapclassify>=2.4.3",
 ]
 name = "sybarval_dataviz"
 version = "0.1.0"
