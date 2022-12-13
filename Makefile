@@ -18,9 +18,12 @@ _data_cache/voitures-par-commune-par-energie.geojson:
 _data_cache/voitures-par-commune-par-energie.csv:
 	wget --output-document=$@ "https://opendata.agenceore.fr/explore/dataset/voitures-par-commune-par-energie/download/?format=csv&timezone=Europe/Berlin&lang=fr&use_labels_for_header=true&csv_separator=%3B"
 
-.phony:populate_data_cache
-populate_data_cache: _data_cache/igt_2016_global.csv _data_cache/conso-elec-gaz-annuelle-par-secteur-dactivite-agregee-commune.csv _data_cache/igt_ademe_2016.csv _data_cache/communes-nouvelle-aquitaine.geojson _data_cache/voitures-par-commune-par-energie.geojson _data_cache/voitures-par-commune-par-energie.csv
+_data_cache/SYNTHESE_resultats_emissions_2018_IGT_d.xlsx:
+	wget --output-document=$@ "https://www.citepa.org/wp-content/uploads/SYNTHESE_resultats_emissions_2018_IGT_d.xlsx"
 
+
+.phony:populate_data_cache
+populate_data_cache: _data_cache/igt_2016_global.csv _data_cache/conso-elec-gaz-annuelle-par-secteur-dactivite-agregee-commune.csv _data_cache/igt_ademe_2016.csv _data_cache/communes-nouvelle-aquitaine.geojson _data_cache/voitures-par-commune-par-energie.geojson _data_cache/voitures-par-commune-par-energie.csv _data_cache/SYNTHESE_resultats_emissions_2016_IGT_d.xlsx _data_cache/SYNTHESE_resultats_emissions_2018_IGT_d.xlsx
 
 .phony: start_jupyter_server
 start_jupyter_server:
